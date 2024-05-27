@@ -9,7 +9,7 @@ languages = ['English', 'French', 'German', 'Romanian']
 class Translation(BaseModel):
     text: str 
     base_lang: str 
-    final_str: str  
+    final_lang: str  
 
     @validator('base_lang', 'final_lang')
     def valid_lang(cls, lang):
