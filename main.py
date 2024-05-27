@@ -4,6 +4,19 @@ import tasks
 
 app = FastAPI()
 
+languages = ['English', 'French', 'German', 'Romanian']
+
+class Translation(BaseModel):
+    text: str 
+    base_lang: str 
+    final_str: str  
+
+    @validator('base_lang', 'final_lang')
+    def valid_lang(cls, lang):
+        if lang not in languages:
+            raise ValueError('Invalid language')
+        return lang
+
 # Route 1 : /
 # Test if everything is working
 @app.get("/")
