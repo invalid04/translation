@@ -1,0 +1,10 @@
+# Route 1 : /
+# Test if everything is working
+
+# Route 2: /translate
+# take in a translation request, and store it to the db
+# Return a translation id
+
+# Route 3: /results
+# Take in a translation id
+# Return a translated text
