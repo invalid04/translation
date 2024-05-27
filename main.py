@@ -39,4 +39,4 @@ def post_translation(t: Translation, background_tasks: BackgroundTasks):
 # Take in a translation id
 # Return a translated text
 def get_translation(t_id: int):
-    pass
+    return {'translation': tasks.find_translation(t_id)}
