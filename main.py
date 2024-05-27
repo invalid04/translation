@@ -26,6 +26,12 @@ def get_root():
 # Route 2: /translate
 # take in a translation request, and store it to the db
 # Return a translation id
+@app.post('/translate')
+def post_translation(t: Translation, background_tasks: BackgroundTasks):
+    # Store the translation
+
+    # Run the translation in the background
+    pass
 
 # Route 3: /results
 # Take in a translation id
