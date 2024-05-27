@@ -26,3 +26,12 @@ def run_translation(t_id: int):
 
 # find_translation
 # retrieve a translation from the database
+def find_translation(t_id: int):
+    model = TranslationModel.get_by_id(t_id)
+
+    translation = model.translation
+    if translation is None:
+        translation = 'Processing...'
+    
+    return translation
+    

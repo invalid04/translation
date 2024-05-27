@@ -38,3 +38,5 @@ def post_translation(t: Translation, background_tasks: BackgroundTasks):
 # Route 3: /results
 # Take in a translation id
 # Return a translated text
+def get_translation(t_id: int):
+    pass
