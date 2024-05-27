@@ -29,9 +29,11 @@ def get_root():
 @app.post('/translate')
 def post_translation(t: Translation, background_tasks: BackgroundTasks):
     # Store the translation
+    t_id = tasks.store_translation(t)
 
     # Run the translation in the background
-    pass
+    background_tasks.add_task(tasks.run_translation, t_id)
+    return {'task_id': t_id}
 
 # Route 3: /results
 # Take in a translation id
